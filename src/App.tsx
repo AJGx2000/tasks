@@ -27,6 +27,7 @@ function App(): JSX.Element {
                             <ol>
                                 <li>One thing</li>
                                 <li>Two thing</li>
+                                <li>Three thing</li>
                             </ol>
                         </div>
                     </Col>
@@ -35,6 +36,7 @@ function App(): JSX.Element {
                             <ul>
                                 <li>Red thing</li>
                                 <li>Blue thing</li>
+                                <li>Green thing</li>
                             </ul>
                         </div>
                     </Col>
