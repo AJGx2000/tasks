@@ -27,18 +27,13 @@ function App(): JSX.Element {
                             <ol>
                                 <li>One thing</li>
                                 <li>Two thing</li>
-                                <li>Three thing</li>
+                                <li>Red thing</li>
+                                <li>Blue thing</li>
                             </ol>
                         </div>
                     </Col>
                     <Col>
-                        <div className="redRect">
-                            <ul>
-                                <li>Red thing</li>
-                                <li>Blue thing</li>
-                                <li>Green thing</li>
-                            </ul>
-                        </div>
+                        <div className="redRect"></div>
                     </Col>
                 </Row>
             </Container>
