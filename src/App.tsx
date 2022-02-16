@@ -20,7 +20,7 @@ function App(): JSX.Element {
             ></img>
             <p>Hello World!</p>
             <Container>
-                <h2>Some things:</h2>
+                <p>Some things:</p>
                 <Row>
                     <Col>
                         <div className="redRect">

@@ -48,12 +48,12 @@ export function isQuestion(message: string): boolean {
  */
 export function convertYesNo(word: string): boolean | null {
     let ret = null;
-    word.toLowerCase;
+    word = word.toLowerCase();
     if (word === "yes") {
         ret = true;
     }
     if (word === "no") {
-        ret = true;
+        ret = false;
     }
     return ret;
 }
