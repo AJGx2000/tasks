@@ -19,6 +19,7 @@ function App(): JSX.Element {
                 alt="It'sa me"
             ></img>
             <p>Hello World!</p>
+            <p>I am very frustrated with git</p>
             <Container>
                 <p>Some things:</p>
                 <Row>
