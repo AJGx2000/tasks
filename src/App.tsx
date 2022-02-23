@@ -16,7 +16,7 @@ function App(): JSX.Element {
             <p>Andrew Gkonos</p>
             <img
                 src="https://lh3.googleusercontent.com/a-/AOh14GjpNuVoTiMF-85ubc_2XNcB-S06X6rgyYyXYyHj=s192-c-rg-br100"
-                alt="It'sa me"
+                alt="It's'a  me"
             ></img>
             <p>Hello World!</p>
             <Container>
