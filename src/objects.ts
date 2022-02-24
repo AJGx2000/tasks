@@ -10,7 +10,16 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
-    return {};
+    return {
+        id: id,
+        name: name,
+        type: type,
+        body: "",
+        expected: "",
+        options: [],
+        points: 1,
+        published: false
+    };
 }
 
 /**
@@ -21,7 +30,10 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    return question.expected.trim().toLowerCase() ===
+        answer.trim().toLowerCase()
+        ? true
+        : false;
 }
 
 /**
@@ -31,7 +43,17 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    let matches = 0;
+    if (question.type === "short_answer_question") {
+        return true;
+    } else if (question.type === "multiple_choice_question") {
+        question.options.map((option: string): number =>
+            option === answer ? matches++ : matches
+        );
+        return matches === 1;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -41,7 +63,7 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    return question.id.toString() + ": " + question.name.slice(0, 10);
 }
 
 /**
@@ -62,7 +84,16 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    let options = "";
+    if (question.type === "multiple_choice_question") {
+        options = question.options
+            .map((option: string): string => "\n- " + option)
+            .join("");
+    }
+    return (
+        //question.id.toString() +
+        "# " + question.name + "\n" + question.body + options
+    );
 }
 
 /**
@@ -70,7 +101,10 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    const renamed = { ...question };
+    renamed.name = newName;
+    renamed.options = [...question.options];
+    return renamed;
 }
 
 /**
@@ -79,7 +113,10 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return question;
+    const newQ = { ...question };
+    newQ.published = !question.published;
+    newQ.options = [...question.options];
+    return newQ;
 }
 
 /**
@@ -89,7 +126,12 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    return oldQuestion;
+    const dupe = { ...oldQuestion };
+    dupe.id = id;
+    dupe.name = "Copy of " + oldQuestion.name;
+    dupe.options = [...oldQuestion.options];
+    dupe.published = false;
+    return dupe;
 }
 
 /**
@@ -100,7 +142,9 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    return question;
+    const newQ = { ...question };
+    newQ.options = [...question.options, newOption];
+    return newQ;
 }
 
 /**
@@ -117,5 +161,11 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return contentQuestion;
+    const mergeQ = { ...contentQuestion };
+    mergeQ.id = id;
+    mergeQ.name = name;
+    mergeQ.points = points;
+    mergeQ.options = [...contentQuestion.options];
+    mergeQ.published = false;
+    return mergeQ;
 }
