@@ -253,7 +253,6 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    console.log(questions, targetId, newId);
     let i = 0;
     let found = 0;
     const newQs = questions.map(
@@ -267,6 +266,7 @@ export function duplicateQuestionInArray(
         })
     );
     newQs.splice(i + 1, 0, duplicateQuestion(newId, questions[i]));
-    console.log(newQs);
+    //console.log(questions, targetId, newId);
+    //console.log(newQs);
     return newQs;
 }
