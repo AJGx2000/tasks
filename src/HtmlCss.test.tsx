@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import userEvent from "@testing-library/user-event";
+//import userEvent from "@testing-library/user-event";
 
 describe("Some HTML Elements are added.", () => {
     /*
@@ -56,7 +56,7 @@ describe("Some Bootstrap Elements are added", () => {
         const consoleSpy = jest.spyOn(console, "log");
         render(<App />);
         const button = screen.getByRole("button", { name: /Log Hello World/i });
-        userEvent.click(button);
+        //userEvent.click(button);
         expect(consoleSpy).toHaveBeenCalledWith("Hello World!");
     });
     */
