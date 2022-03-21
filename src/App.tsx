@@ -14,6 +14,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
+
             <hr></hr>
             <nav className="cool" id="aweseom"></nav>
             <Counter></Counter>
@@ -27,6 +28,7 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+
         </div>
     );
 }
