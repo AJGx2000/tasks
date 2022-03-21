@@ -1,5 +1,4 @@
 import React from "react";
-// import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -14,9 +13,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
-
             <hr></hr>
-            <nav className="cool" id="aweseom"></nav>
             <Counter></Counter>
             <hr />
             <RevealAnswer></RevealAnswer>
@@ -28,9 +25,7 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
-
         </div>
     );
 }
-
 export default App;
