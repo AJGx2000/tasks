@@ -43,3 +43,18 @@
     height: 100%;
     background-color: #a00001;
 }
+
+.switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.middleBox {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 25%;
+}

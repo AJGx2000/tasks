@@ -10,6 +10,11 @@ import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
+import { CheckAnswer } from "./form-components/CheckAnswer";
+import { GiveAttempts } from "./form-components/GiveAttempts";
+import { EditMode } from "./form-components/EditMode";
+import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
+import { ChangeColor } from "./form-components/ChangeColor";
 
 function App(): JSX.Element {
     return (
@@ -17,15 +22,29 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
-            <hr></hr>
-            {<DoubleHalf></DoubleHalf>}
-            <hr></hr>
+            <hr />
+            <CheckAnswer expectedAnswer="42"></CheckAnswer>
+            <hr />
+            <GiveAttempts></GiveAttempts>
+            <hr />
+            <EditMode></EditMode>
+            <hr />
+            <ChangeColor></ChangeColor>
+            <hr />
+            <MultipleChoiceQuestion
+                options={["a", "b", "c"]}
+                expectedAnswer="b"
+            ></MultipleChoiceQuestion>
+            {/*}
+            <hr />
+            <DoubleHalf></DoubleHalf>
+            <hr />
             <ChooseTeam></ChooseTeam>
-            <hr></hr>
+            <hr />
             <ColoredBox></ColoredBox>
-            <hr></hr>
+            <hr />
             <ShoveBox></ShoveBox>
-            <hr></hr>
+            <hr />
             <Counter></Counter>
             <hr />
             <RevealAnswer></RevealAnswer>
@@ -37,6 +56,7 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+            */}
         </div>
     );
 }
