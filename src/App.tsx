@@ -35,7 +35,6 @@ function App(): JSX.Element {
                 options={["a", "b", "c"]}
                 expectedAnswer="b"
             ></MultipleChoiceQuestion>
-            {/*}
             <hr />
             <DoubleHalf></DoubleHalf>
             <hr />
@@ -56,7 +55,6 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
-            */}
         </div>
     );
 }
